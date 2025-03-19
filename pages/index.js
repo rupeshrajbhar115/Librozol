@@ -1,8 +1,6 @@
 // MODULES //
 
 // COMPONENTS //
-import Header from "@/components/Header";
-import SideHeader from "@/components/sideHeader";
 import MetaTags from "@/components/MetaTags";
 
 // SECTIONS //

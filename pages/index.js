@@ -28,8 +28,6 @@ export default function HomePage() {
 				Url={"/"}
 			/>
 
-			{/* Header */}
-
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
 				<h2>Librozol-Campaign</h2>

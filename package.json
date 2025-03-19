@@ -12,13 +12,9 @@
 		"create-page": "node scripts/createPage.js"
 	},
 	"dependencies": {
-		"@ckeditor/ckeditor5-build-classic": "^43.3.1",
-		"@ckeditor/ckeditor5-react": "^9.3.1",
-		"@studio-freight/lenis": "^1.0.22",
-		"ckeditor5": "^43.3.1",
-		"ckeditor5-premium-features": "^43.3.1",
 		"commander": "^11.1.0",
 		"fs-extra": "^11.2.0",
+		"@studio-freight/lenis": "^1.0.22",
 		"html-react-parser": "^5.0.6",
 		"next": "12.3.0",
 		"path": "^0.12.7",
@@ -26,7 +22,10 @@
 		"react-dom": "18.2.0",
 		"react-hook-form": "^7.45.4",
 		"resend": "^2.0.0",
-		"sass": "^1.54.9"
+		"sass": "^1.54.9",
+		"swiper": "^11.1.14",
+		"gsap": "^3.12.5",
+		"lightgallery": "^2.7.1"
 	},
 	"devDependencies": {
 		"@types/node": "^20.10.5",

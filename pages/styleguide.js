@@ -27,7 +27,14 @@ import accordianData from "@/data/accordianData.json";
 
 /** Styleguide Page */
 const StyleGuide = () => {
-	const colors = ["primary", "secondary"];
+	const colors = [
+		"primary",
+		"secondary",
+		"tertiary",
+		"quaternary",
+		"white",
+		"black",
+	];
 
 	return (
 		<div className={styles.styleguide}>
@@ -71,7 +78,17 @@ const StyleGuide = () => {
 			{/* ============ Fonts ================ */}
 			<h2 className="text_xxxxl font_primary">Fonts</h2>
 			<section>
-				<p className="text_xxxxl font_primary">86 - paytone font</p>
+				<h2 className="text_xxs ">Ubuntu text_xxs</h2>
+				<br />
+				<h3 className="text_xs ">Ubuntu text_xs</h3>
+				<br />
+				<h3 className="text_x ">Ubuntu text_x</h3>
+				<br />
+				<h4 className="text_xm ">IBM Plex Sans text_xm</h4>
+				<br />
+				<p className="text_m ">IBM Plex Sans text_m</p>
+				<br />
+				<p className="text_reg ">IBM Plex Sans text_reg</p>
 			</section>
 
 			{/* ============ Text colors ================ */}

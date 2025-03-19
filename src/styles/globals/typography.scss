@@ -1,11 +1,61 @@
-// .text_xxs {}
-// .text_xs {}
-// .text_sm {}
+.text_xxs {
+	font-size: 146px;
+	line-height: 130px;
+	font-weight: 700;
+	letter-spacing: -3px;
+	font-family: var(--font_primary);
+}
+.text_xs {
+	font-size: 65px;
+	line-height: 1;
+	font-weight: 500;
+	font-family: var(--font_primary);
+}
+.text_x {
+	font-size: 65px;
+	line-height: 1;
+	font-weight: 400;
+	font-family: var(--font_primary);
+}
+.text_xm {
+	font-size: 24px;
+	line-height: 33.6px;
+	font-weight: 400;
+	font-family: var(--font_secondary);
+}
+.text_m {
+	font-size: 22px;
+	line-height: 30.8px;
+	font-weight: 400;
+	font-family: var(--font_secondary);
+}
 
 // For default body copy font
 .text_reg {
 	font-size: 18px;
-	line-height: calc(27 / 18);
+	font-weight: 400;
+	line-height: 25.2px;
+	font-family: var(--font_secondary);
+}
+
+// color style
+.color_primary {
+	color: var(--color_primary);
+}
+.color_secondary {
+	color: var(--color_secondary);
+}
+.color_tertiary {
+	color: var(--color_tertiary);
+}
+.color_quaternary {
+	color: var(--color_quaternary);
+}
+.color_white {
+	color: var(--color_white);
+}
+.color_black {
+	color: var(--color_black);
 }
 
 // .text_md {}
@@ -14,6 +64,15 @@
 // .text_xxl {}
 // .text_xxxl {}
 // .text_xxxxl {}
+
+// Classes for fonts
+.font_primary {
+	font-family: var(--font_primary);
+}
+
+.font_secondary {
+	font-family: var(--font_secondary);
+}
 
 // // Each loop for creating font weights ->
 // //.text_100, .text_200 .....

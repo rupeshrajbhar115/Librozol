@@ -25,8 +25,6 @@ export default function HomePage() {
 			{/* Metatags */}
 			<MetaTags Title={"Home"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
 
-			{/* Header */}
-
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
 				<h2>Trupath Dashboard</h2>

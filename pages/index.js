@@ -23,11 +23,16 @@ export default function HomePage() {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"Home"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
+			<MetaTags
+				Title={"Librozol-Campaign"}
+				Desc={"Librozol Campaign"}
+				OgImg={""}
+				Url={"/"}
+			/>
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
-				<h2>Trupath Dashboard</h2>
+				<h2>Librozol Campaign</h2>
 			</main>
 			{/* Page Content ends here */}
 		</div>

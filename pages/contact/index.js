@@ -1,48 +1,45 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable require-jsdoc */
 // MODULES //
 import { useEffect, useState } from "react";
 
 // COMPONENTS //
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SideHeader from "@/components/sideHeader";
+import ContactForm from "@/sections/ContactForm";
 import MetaTags from "@/components/MetaTags";
+import SideHeader from "@/components/sideHeader";
 
 // SECTIONS //
 
 // PLUGINS //
 
 // STYLES //
-import styles from "@/styles/pages/blog.module.scss";
+import styles from "@/styles/pages/Contact.module.scss";
 
 // UTILS //
 
 // IMAGES //
-import Edit from "@/../public/img/edit.png";
 import Delete from "@/../public/img/delete.png";
 
 // DATA //
-import { getAllBlogs } from "@/services/BlogService";
-import { deleteBlog } from "@/services/BlogService";
-import { title } from "process";
+
+import { getAllContact } from "@/services/ContactService";
+import { deleteContact } from "@/services/ContactService";
 
 /** Contact Page */
-export default function Blog() {
-	const [blogs, setBlogs] = useState([]);
-	const [loading, setLoading] = useState(true);
+export default function ContactPage({ firstName }) {
+	const [contact, setContact] = useState([]);
 
 	// useEffect
 	useEffect(() => {
-		async function fetchBlogs() {
-			const data = await getAllBlogs();
-			setBlogs(data);
-			setLoading(false);
+		async function fetchContact() {
+			const data = await getAllContact();
+			setContact(data);
 		}
 
-		fetchBlogs();
+		fetchContact();
 	}, []);
-
-	console.log(blogs);
+	console.log(contact, "contact");
 
 	return (
 		<div>
@@ -57,59 +54,54 @@ export default function Blog() {
 			<main className={styles.BlogPage}>
 				<div className={`${styles.title_addEntery_btn}`}>
 					<div className={`${styles.title}`}>
-						<h2>Blogs</h2>
-					</div>
-					<div className={`${styles.addEntery_btn}`}>
-						<a href="/blogs/create">Create new entry</a>
+						<h2>Contacts</h2>
 					</div>
 				</div>
 				<div className={`${styles.show_data} ${styles.show_data_bg}`}>
 					<div className={`${styles.field}`}>
-						<h4>Title</h4>
+						<h4>First Name</h4>
 					</div>
 					<div className={`${styles.field}`}>
-						<h4>Description</h4>
+						<h4>Last Name</h4>
 					</div>
 					<div className={`${styles.field}`}>
-						<h4>Date</h4>
+						<h4>Email</h4>
 					</div>
 					<div className={`${styles.field}`}>
-						<h4>Slug</h4>
+						<h4>Number</h4>
+					</div>
+					<div className={`${styles.field}`}>
+						<h4>msg</h4>
 					</div>
 					<div className={`${styles.field}`}>
 						<h4>Action</h4>
 					</div>
 				</div>
-
 				<>
-					{blogs.blog?.map((item, ind) => {
+					{contact.contact?.map((item, ind) => {
 						return (
 							<div className={`${styles.show_data}`} key={ind}>
 								<div className={`${styles.field}`}>
-									<p>{item.title}</p>
+									<p>{item.firstName}</p>
 								</div>
 								<div className={`${styles.field}`}>
-									<p>{item.description}</p>
+									<p>{item.lastName}</p>
 								</div>
 								<div className={`${styles.field}`}>
-									<p>{item.date}</p>
+									<p>{item.email}</p>
 								</div>
 								<div className={`${styles.field}`}>
-									<p>{item.slug}</p>
+									<p>{item.number}</p>
+								</div>
+								<div className={`${styles.field}`}>
+									<p>{item.msg}</p>
 								</div>
 								<div className={`${styles.field}`}>
 									<div className={`${styles.action}`}>
-										<a
-											className={`${styles.action_img}`}
-											onClick={() => console.log(`Editing ${item.title}`)}
-											href={`/blogs/${item._id}`}
-										>
-											<img src={Edit.src} alt="Edit" />
-										</a>
 										<div
 											className={`${styles.action_img}`}
 											// onClick={() => console.log(`Editing ${item.title}`)}
-											onClick={() => deleteBlog({ title: item.title })}
+											onClick={() => deleteContact({ firstName: item.firstName })}
 										>
 											<img src={Delete.src} alt="Edit" />
 										</div>
@@ -121,21 +113,9 @@ export default function Blog() {
 				</>
 			</main>
 			{/* Page Content ends here */}
+
+			{/* Footer */}
+			<Footer />
 		</div>
 	);
 }
-
-/** Blogs data get*/
-// export const getStaticProps = async () => {
-// 	/**Fetch Api Case-StudiesBlog Page */
-// 	const allPromiseResponse = await Promise.all([
-// 		fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`),
-// 	]);
-
-// 	return {
-// 		props: {
-// 			blogs: await allPromiseResponse[0].json(),
-// 		},
-// 		revalidate: 30,
-// 	};
-// };

@@ -1,4 +1,4 @@
-$colors: "primary" "black", "secondary" "secondary", "white";
+$colors: "primary" "primary_contrast", "secondary" "secondary_contrast", "white";
 
 @each $color, $color_text in $colors {
 	// Classes for Background colors

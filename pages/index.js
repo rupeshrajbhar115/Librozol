@@ -1,16 +1,13 @@
 // MODULES //
 
 // COMPONENTS //
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import SideHeader from "@/components/sideHeader";
 import MetaTags from "@/components/MetaTags";
-import MainWrapperComponent from "@/sections/MainWrapperComponent";
 
 // SECTIONS //
 
 // PLUGINS //
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // UTILS //
 
@@ -21,8 +18,6 @@ import styles from "@/styles/pages/Home.module.scss";
 
 // DATA //
 
-gsap.registerPlugin(ScrollTrigger);
-
 /** Home Page */
 export default function HomePage() {
 	return (
@@ -31,16 +26,14 @@ export default function HomePage() {
 			<MetaTags Title={"Home"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
 
 			{/* Header */}
-			{/* <Header /> */}
+			<Header />
+			<SideHeader />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.HomePage} lines_bg`}>
-				<MainWrapperComponent gsap={gsap} ScrollTrigger={ScrollTrigger} />
+			<main className={`${styles.HomePage}`}>
+				<h2>Trupath Dashboard</h2>
 			</main>
 			{/* Page Content ends here */}
-
-			{/* Footer */}
-			{/* <Footer /> */}
 		</div>
 	);
 }

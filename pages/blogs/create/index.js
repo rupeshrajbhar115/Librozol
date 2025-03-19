@@ -21,60 +21,12 @@ import styles from "@/styles/pages/blogCreate.module.scss";
 // IMAGES //
 
 // DATA //
-import {
-	createBlog,
-	getIdBlogs,
-	updateOneBlogById,
-} from "@/services/BlogService";
+import { createBlog } from "@/services/BlogService";
 import "ckeditor5/ckeditor5.css";
 import "ckeditor5-premium-features/ckeditor5-premium-features.css";
 
 /** Contact Page */
-export default function Blog(_id) {
-	const [blogs, setBlogs] = useState([]);
-	const [idUrl, setIdUrl] = useState([]);
-
-	// =========================== Get Url in id start ===========================
-	useEffect(() => {
-		const fullUrl = `${window.location}`;
-		const urlParts = fullUrl.split("/");
-		const id = urlParts[urlParts.length - 1];
-		async function fetchBlogs() {
-			const data = await getIdBlogs(id);
-			setBlogs(data);
-		}
-		setIdUrl(id);
-
-		fetchBlogs();
-	}, []);
-	// =========================== Get Url in id End =============================
-
-	// =========================== Add formData in input Field start =============
-	const [formData1, setFormData1] = useState({
-		title: "",
-		description: "",
-		thumbnail: "",
-		content: "",
-		slug: "",
-		date: "",
-		readTime: "",
-	});
-	useEffect(() => {
-		if (blogs?.blog) {
-			setFormData1({
-				title: blogs.blog.title || "",
-				description: blogs.blog.description || "",
-				thumbnail: blogs.blog.thumbnail?.media || "",
-				content: blogs.blog.content || "",
-				slug: blogs.blog.slug || "",
-				date: blogs.blog.date || "",
-				readTime: blogs.blog.readTime || "",
-			});
-		}
-	}, [blogs]);
-	// =========================== Add formData in input Field End ===============
-
-	// =========================== CKEditor Code Start ============================
+export default function Blog() {
 	const editorRef = useRef();
 	const [editorLoaded, setEditorLoaded] = useState(false);
 	const { CKEditor, ClassicEditor } = editorRef.current || {};
@@ -95,9 +47,8 @@ export default function Blog(_id) {
 		const data = editor.getData();
 		setContent(data);
 	};
-	// =========================== CKEditor Code End ============================
 
-	// =========================== Handle form submission Start =================
+	// Handle form submission
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const formdata = new FormData();
@@ -113,14 +64,11 @@ export default function Blog(_id) {
 		// Append CKEditor content
 		formdata.append("content", content);
 		// Send formdata to API
-		await updateOneBlogById({
-			formdata: formdata,
-			_id: idUrl,
-		});
-		// await updateOneBlogById({ _id });
+		await createBlog({ formdata });
 		router.push("/blogs");
 	};
-	// =========================== Handle form submission End =================
+
+	console.log(content, "data");
 
 	return (
 		<div>
@@ -144,10 +92,6 @@ export default function Blog(_id) {
 										id="title"
 										type="text"
 										placeholder="Title"
-										value={formData1.title} // Yeh ab formData1.title ke saath linked hai
-										onChange={
-											(e) => setFormData1({ ...formData1, title: e.target.value }) // Updated state ko set kar raha hai
-										}
 										required
 									/>
 								</div>
@@ -158,7 +102,6 @@ export default function Blog(_id) {
 										id="description"
 										type="text"
 										placeholder="Description"
-										value={blogs.blog?.description}
 										required
 									/>
 								</div>
@@ -169,23 +112,15 @@ export default function Blog(_id) {
 										name="thumbnail"
 										id="thumbnail"
 										accept="image/*"
-										// required
+										required
 									/>
-									{/* Add the thumbnail URL as an image preview */}
-									{/* <div>
-										<img
-											src="http://res.cloudinary.com/dgzcwv7h7/image/upload/v1732037216/ksukjayp6taywttoynan.png"
-											alt="Thumbnail"
-											width="100"
-										/>
-									</div> */}
 								</div>
 								<div className={`${styles.fiels}`}>
 									<label>Content</label>
 									{editorLoaded ? (
 										<CKEditor
 											editor={ClassicEditor}
-											data={blogs.blog?.content}
+											data={content}
 											onInit={(editor) => {
 												console.log("Editor is ready to use!", editor);
 											}}
@@ -198,25 +133,11 @@ export default function Blog(_id) {
 
 								<div className={`${styles.fiels}`}>
 									<label>Slug</label>
-									<input
-										name="slug"
-										id="slug"
-										type="text"
-										placeholder="slug"
-										value={blogs.blog?.slug}
-										required
-									/>
+									<input name="slug" id="slug" type="text" placeholder="slug" required />
 								</div>
 								<div className={`${styles.fiels}`}>
 									<label>Date</label>
-									<input
-										name="date"
-										id="date"
-										type="text"
-										placeholder="Date"
-										value={blogs.blog?.date}
-										required
-									/>
+									<input name="date" id="date" type="text" placeholder="Date" required />
 								</div>
 								<div className={`${styles.fiels}`}>
 									<label>Read Time</label>
@@ -225,7 +146,6 @@ export default function Blog(_id) {
 										id="readTime"
 										type="text"
 										placeholder="Read Time"
-										value={blogs.blog?.readTime}
 										required
 									/>
 								</div>

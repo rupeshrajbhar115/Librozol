@@ -23,7 +23,12 @@ export default function HomePage() {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"Home"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
+			<MetaTags
+				Title={"Librozol-Campaign"}
+				Desc={"Librozol Campaign"}
+				OgImg={""}
+				Url={"/"}
+			/>
 
 			{/* Header */}
 

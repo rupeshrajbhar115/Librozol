@@ -8,7 +8,8 @@
 body {
 	margin: 0;
 	@extend .text_reg;
-	font-family: var(--font_secondary);
+	background-color: #5BD8FB;
+	font-family: 'Baloo 2', sans-serif;
 }
 
 * {

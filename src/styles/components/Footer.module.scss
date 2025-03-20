@@ -1,5 +1,44 @@
 @import "../helpers/helpers.scss";
 
 .main_footer {
-  // height: 100px;
+  padding: 40px 0;
+  background-color: #00127E;
+  .footer_section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .left{
+      p{
+        opacity: 0.8;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #CDCDCD;
+      }
+      h6{
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #fff;
+        padding-top: 10px;
+      }
+    }
+    .right{
+      p{
+        opacity: 0.8;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #CDCDCD;
+        text-align: right;
+        padding-bottom: 10px;
+      }
+      ul{
+        display: flex;
+        grid-gap: 10px;
+        list-style: none;
+        padding-left: 0;
+      }
+    }
+  }
 }

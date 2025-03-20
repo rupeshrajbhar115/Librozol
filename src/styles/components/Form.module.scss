@@ -1,0 +1,112 @@
+@import "../helpers/helpers.scss";
+
+.form_section{
+    width: 80%;
+    margin: auto;
+    padding: 30px 50px 40px 50px;
+    border-radius: 20px;
+    background-color: #fff;
+    .title_section{
+        text-align: center;
+        h2{
+            color: #00127E;
+            font-size: 32px;
+            font-weight: 600;
+        }
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            color: #727272;
+        }
+    }
+    .form{
+        margin-top: 50px;
+        .formGroupSection{
+            display: flex;
+            grid-gap: 25px;
+            margin-bottom: 20px;
+            align-items: center;
+            justify-content: space-between;
+            .formGroup{
+                width: 48%;
+                position: relative;
+                .lable_text{
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #727272;
+                }
+                input{
+                    width: 100%;
+                    height: 50px;
+                    font-size: 16px;
+                    color: #1D1D1B;
+                    padding: 12px 15px;
+                    border-radius: 8px;
+                    border: 1px solid #E6E6E6;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                select{
+                    width: 100%;
+                    height: 50px;
+                    font-size: 16px;
+                    color: #1D1D1B;
+                    padding: 12px 15px;
+                    border-radius: 8px;
+                    border: 1px solid #E6E6E6;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    margin-top: -3px;
+                    accent-color: black; /* Change checkbox color */
+                }
+                &.check_box{
+                    grid-gap: 10px;
+                    display: flex;
+                    align-items: center;
+                }
+                .checkbox_error{
+                    left: 0;
+                    bottom: -30px;
+                    position: absolute;
+                }
+            }
+        }
+        .btn_section{
+            margin-top: 50px;
+            text-align: center;
+            .btn_secondary{
+                border: 0;
+                font-size: 16px;
+                font-weight: 400;
+                color: #fff;
+                border-radius: 100px;
+                padding: 10px 20px;
+                box-shadow: none;
+                background: #00127E;
+            }
+        }
+        
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            font-size: 16px;
+            color: #1D1D1B;
+          }
+          ::-moz-placeholder { /* Firefox 19+ */
+            font-size: 16px;
+            color: #1D1D1B;
+          }
+          :-ms-input-placeholder { /* IE 10+ */
+            font-size: 16px;
+            color: #1D1D1B;
+          }
+          :-moz-placeholder { /* Firefox 18- */
+            font-size: 16px;
+            color: #1D1D1B;
+          }
+    }
+}

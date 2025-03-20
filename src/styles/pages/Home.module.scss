@@ -1,5 +1,140 @@
 @import "../helpers/helpers.scss";
 
 .HomePage {
-	
+    .section_1{
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        .intro_banner{
+            z-index: 1;
+            width: 100%;
+            height: 100vh;
+            transition: all 1s;
+            position: relative;
+            
+            &.introBannerFade{
+                opacity: 0;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .header{
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                position: absolute;
+                background-color: #fff;
+                img{
+                    width: 250px;
+                    margin: auto;
+                }
+            }
+            .intro_logo{
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, - 50%);
+            }
+        }
+        .flow_animation{
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            .step_1{
+                video{
+                    width: 100vw;
+                    height: 100vh;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+	.section_2{
+        position: relative;
+        margin-bottom: 250px;
+        .wave{
+            img{
+                width: 100%;
+            }
+        }
+        .water_title{
+            margin-top: -80px;
+            .water_drop{
+                img{
+                    margin: auto;
+                }
+            }
+            .title{
+                padding-top: 25px;
+                h2{
+                    font-size: 52px;
+                    font-weight: 600;
+                    line-height: 55px;
+                }
+            }
+        }
+        .lost_water{
+            width: 650px;
+            margin: auto;
+            padding-top: 20vh;
+            h6{
+                color: #fff;
+                font-size: 14px;
+                font-weight: 500;
+                padding-bottom: 10px;
+            }
+            .hand_box{
+                border-radius: 20px;
+                background-color: #0A409D;
+                padding: 60px 200px 60px 40px;
+                h3{
+                    color: #fff;
+                    font-size: 40px;
+                    font-weight: 600;
+                    line-height: 50px;
+                    span{
+                        color: #5BD8FB;
+                    }
+                }
+            }
+        }
+        .hand{
+            right: 0;
+            top: 90%;
+            position: absolute; 
+            transform: translateY(-50%);
+            img{
+                width: 780px;
+            }
+        }
+    }
+    .section_4{
+        padding: 100px 0;
+        .child_section{
+            display: flex;
+            grid-gap: 50px;
+            align-items: center;
+            justify-content: space-between;
+            .child_img{
+                width: 50%;
+            }
+            .child_info{
+                width: 50%;
+                h2{
+                    color: #00127E;
+                    font-size: 40px;
+                    font-weight: 600;
+                    line-height: 48px;
+                    span{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -232,6 +232,13 @@ export default function HomePage() {
 											Your browser does not support the video tag.
 										</video>
 									</div>
+									<div className={styles.audio}>
+										<audio autoPlay loop>
+											<source src="../img/home/audio.mp3" type="audio/mp3" />
+											Your browser does not support the audio element.
+										</audio>
+									</div>
+
 									<div className={`${styles.video_text} ${styles.video_text4}`}>
 										<h3>
 											Congratulations, <br />

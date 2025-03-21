@@ -50,7 +50,7 @@
                 z-index: 1;
                 width: 100vw;
                 height: 100vh;
-                position: absolute;
+                position: absolute; mobile_banner_screen_1
                 &.banner_screen_1{
                     width: 100vw;
                     height: 100vh;
@@ -58,6 +58,9 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-image: url("/img/home/banner_screen_1.jpg");
+                    @media (max-width: 767px) {
+                        background-image: url("/img/home/mobile_banner_screen_1.jpg");
+                    }
                 }
                 &.banner_screen_2{
                     width: 100vw;
@@ -66,6 +69,9 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-image: url("/img/home/banner_screen_2.jpg");
+                    @media (max-width: 767px) {
+                        background-image: url("/img/home/mobile_banner_screen_2.jpg");
+                    }
                 }
                 &.banner_screen_4{
                     width: 100vw;
@@ -74,6 +80,9 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     background-image: url("/img/home/banner_screen_4.jpg");
+                    @media (max-width: 767px) {
+                        background-image: url("/img/home/mobile_banner_screen_4.jpg");
+                    }
                 }
                 .video_text1{
                     @media (max-width: 767px) {

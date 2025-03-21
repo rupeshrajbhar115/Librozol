@@ -32,6 +32,7 @@ import HandPoint from "../public/img/home/curser.png";
 /** Home Page */
 export default function HomePage() {
 	const videoRef = useRef(null);
+	const formSectionRef = useRef(null);
 	const [fadeOut, setFadeOut] = useState(false);
 	const [showStep2, setShowStep2] = useState(false);
 	const [showStep3, setShowStep3] = useState(false);
@@ -54,6 +55,12 @@ export default function HomePage() {
 			setVideoPlayed(true);
 		}
 		setShowFlowGuard(false);
+	};
+	/** Scroll to Form Section */
+	const handleScrollToForm = () => {
+		if (formSectionRef.current) {
+			formSectionRef.current.scrollIntoView({ behavior: "smooth" });
+		}
 	};
 
 	return (
@@ -179,39 +186,6 @@ export default function HomePage() {
 										<h5>to stop the water leak.</h5>
 									</div>
 								</div>
-
-								{/* <div className={styles.step_wrapper_2}>
-								
-									<div className={styles.step_1}>
-										<video ref={videoRef} muted>
-											<source src="../img/home/desktop_video_3.mp4" type="video/mp4" />
-										</video>
-									</div>
-
-								
-									<div className={`${styles.flow_guard}`} onClick={handleVideoPlay}>
-										<img
-											src={FlowGuard.src}
-											className={`${styles.floating_img} img-responsive`}
-											alt="banner"
-										/>
-										<img
-											src={HandPoint.src}
-											className={`${styles.hand_point} ${styles.floating_img} img-responsive`}
-											alt="banner"
-										/>
-									</div>
-
-								
-									<div className={`${styles.video_text}`}>
-										<h3>
-											Replace the Faulty <br />
-											pipe with Floguard® <br />
-											Plus CPV
-										</h3>
-										<h5>to stop the water leak.</h5>
-									</div>
-								</div> */}
 							</div>
 						)}
 
@@ -232,7 +206,7 @@ export default function HomePage() {
 											Floguard® Plus CPV helps prevent leaks. Now take the pledge to save
 											water in real life.{" "}
 										</h5>
-										<div className={`${styles.btn_section}`}>
+										<div className={`${styles.btn_section}`} onClick={handleScrollToForm}>
 											<div className={`${styles.btn_secondary}`}>Take the Pledge</div>
 										</div>
 									</div>
@@ -270,7 +244,7 @@ export default function HomePage() {
 						</div>
 					</div>
 				</section>
-				<section className={`${styles.section_3}`}>
+				<section className={`${styles.section_3}`} ref={formSectionRef}>
 					<div className="container">
 						<Form />
 					</div>

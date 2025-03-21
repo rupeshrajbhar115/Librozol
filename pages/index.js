@@ -103,7 +103,7 @@ export default function HomePage() {
 											Your browser does not support the video tag.
 										</video>
 									</div>
-									<div className={`${styles.video_text}`}>
+									<div className={`${styles.video_text} ${styles.video_text1}`}>
 										<h3>
 											Leaky pipes
 											<br /> dampen your walls.
@@ -144,7 +144,7 @@ export default function HomePage() {
 										/>
 									</div>
 
-									<div className={`${styles.video_text}`}>
+									<div className={`${styles.video_text} ${styles.video_text2}`}>
 										<h3>
 											Tap on the <br /> rusted pipe
 										</h3>
@@ -205,7 +205,7 @@ export default function HomePage() {
 									)}
 
 									<div
-										className={`${styles.video_text}`}
+										className={`${styles.video_text} ${styles.video_text3}`}
 										onClick={() => setShowStep4(true)}
 									>
 										<h3>
@@ -232,7 +232,7 @@ export default function HomePage() {
 											Your browser does not support the video tag.
 										</video>
 									</div>
-									<div className={`${styles.video_text}`}>
+									<div className={`${styles.video_text} ${styles.video_text4}`}>
 										<h3>
 											Congratulations, <br />
 											you did it!

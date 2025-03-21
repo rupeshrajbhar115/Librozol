@@ -51,6 +51,26 @@
                 width: 100vw;
                 height: 100vh;
                 position: absolute;
+                .video_text1{
+                    @media (max-width: 767px) {
+                        top: 70% !important;
+                    }
+                }
+                .video_text2{
+                    @media (max-width: 767px) {
+                        top: 70% !important;
+                    }
+                }
+                .video_text3{
+                    @media (max-width: 767px) {
+                        top: 65% !important;
+                    }
+                }
+                .video_text4{
+                    @media (max-width: 767px) {
+                        top: 70% !important;
+                    }
+                }
                 .step_wrapper_1{
                     .step_1{
                         video{
@@ -80,7 +100,7 @@
                         h3{
                             color: #fff;
                             font-size: 56px;
-                            font-weight: 600;
+                            font-weight: 700;
                             line-height: 60px;
                             @media (max-width: 767px) {
                                 font-size: 35px;
@@ -116,6 +136,7 @@
                         }
                     }
                 }
+               
                 .step_wrapper_2{
                     cursor: pointer;
                     .step_1{
@@ -196,6 +217,9 @@
                               .floating_img {
                                 width: 65px;
                                 animation: floatAnimation 4s ease-in-out infinite;
+                                @media (max-width: 767px) {
+                                   width: 55px;
+                                }
                               }
                               .hand_point {
                                 top: 60%;

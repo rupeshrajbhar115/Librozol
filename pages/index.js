@@ -116,14 +116,26 @@ export default function HomePage() {
 					</div>
 					<div className={styles.flow_animation_wrapper}>
 						{fadeOut && !showStep2 && !showStep3 && !showStep4 && (
-							<div className={styles.flow_animation}>
+							<div className={`${styles.flow_animation} ${styles.banner_screen_1}`}>
 								<div className={styles.step_wrapper_1}>
 									<div className={styles.step_1}>
-										<video autoPlay playsInline muted className="hidden_xs">
+										<video
+											preload="auto"
+											autoPlay
+											playsInline
+											muted
+											className="hidden_xs"
+										>
 											<source src="../img/home/desktop_video_1.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
-										<video autoPlay playsInline muted className="visible_xs">
+										<video
+											preload="auto"
+											autoPlay
+											playsInline
+											muted
+											className="visible_xs"
+										>
 											<source src="../img/home/mobile_video_1.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
@@ -148,17 +160,31 @@ export default function HomePage() {
 						)}
 
 						{showStep2 && !showStep3 && !showStep4 && (
-							<div className={styles.flow_animation}>
+							<div className={`${styles.flow_animation} ${styles.banner_screen_2}`}>
 								<div
 									className={styles.step_wrapper_2}
 									onClick={() => setShowStep3(true)}
 								>
 									<div className={styles.step_1}>
-										<video autoPlay muted loop playsInline className="hidden_xs">
+										<video
+											preload="auto"
+											autoPlay
+											muted
+											loop
+											playsInline
+											className="hidden_xs"
+										>
 											<source src="../img/home/desktop_video_2.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
-										<video autoPlay muted loop playsInline className="visible_xs">
+										<video
+											preload="auto"
+											autoPlay
+											muted
+											loop
+											playsInline
+											className="visible_xs"
+										>
 											<source src="../img/home/mobile_video_2.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
@@ -184,21 +210,31 @@ export default function HomePage() {
 						)}
 
 						{showStep3 && !showStep4 && (
-							<div className={styles.flow_animation}>
+							<div className={`${styles.flow_animation} ${styles.banner_screen_2}`}>
 								<div className={styles.step_wrapper_2}>
 									{showFlowGuard && (
 										<div className={`${styles.step_1}`}>
-											<video autoPlay muted loop playsInline className="hidden_xs">
+											<video
+												preload="auto"
+												autoPlay
+												muted
+												loop
+												playsInline
+												className="hidden_xs"
+											>
 												<source src="../img/home/desktop_video_2.mp4" type="video/mp4" />
 											</video>
-											<video autoPlay muted loop playsInline className="visible_xs">
+											<video
+												preload="auto"
+												autoPlay
+												muted
+												loop
+												playsInline
+												className="visible_xs"
+											>
 												<source src="../img/home/mobile_video_2.mp4" type="video/mp4" />
 												Your browser does not support the video tag.
 											</video>
-											{/* <audio autoPlay loop>
-												<source src="../img/home/flow_audio.mp3" type="audio/mp3" />
-												Your browser does not support the audio element.
-											</audio> */}
 										</div>
 									)}
 
@@ -262,13 +298,26 @@ export default function HomePage() {
 						)}
 
 						{showStep4 && (
-							<div className={styles.flow_animation}>
+							<div className={`${styles.flow_animation} ${styles.banner_screen_4}`}>
 								<div className={styles.step_wrapper_2}>
 									<div className={styles.step_1}>
-										<video autoPlay muted playsInline loop className="hidden_xs">
+										<video
+											preload="auto"
+											autoPlay
+											muted
+											playsInline
+											loop
+											className="hidden_xs"
+										>
 											<source src="../img/home/desktop_video_4.mp4" type="video/mp4" />
 										</video>
-										<video autoPlay muted playsInline className="visible_xs">
+										<video
+											preload="auto"
+											autoPlay
+											muted
+											playsInline
+											className="visible_xs"
+										>
 											<source src="../img/home/mobile_video_4.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>

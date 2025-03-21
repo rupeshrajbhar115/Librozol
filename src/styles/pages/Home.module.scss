@@ -248,6 +248,8 @@
                             margin-top: 20px;
                             .btn_secondary{
                                 border: 0;
+                                z-index: 1111;
+                                position: relative;
                                 cursor: pointer;
                                 font-size: 24px;
                                 font-weight: 400;

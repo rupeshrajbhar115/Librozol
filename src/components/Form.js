@@ -100,23 +100,19 @@ export default function Form() {
 						</label>
 						<input
 							className={`${styles.input} text_xs`}
-							type="number"
+							type="text"
 							id="number"
 							name="number"
 							placeholder="Phone number"
+							maxLength={10} // Limits to 10 digits
+							onInput={(e) =>
+								(e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10))
+							}
 							{...register("number", {
 								required: "This field is required",
 								pattern: {
 									value: /^[6-9]\d{9}$/,
 									message: "Enter a valid 10-digit phone number",
-								},
-								maxLength: {
-									value: 10,
-									message: "Phone number must be exactly 10 digits",
-								},
-								minLength: {
-									value: 10,
-									message: "Phone number must be exactly 10 digits",
 								},
 							})}
 						/>

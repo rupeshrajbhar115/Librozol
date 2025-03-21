@@ -76,7 +76,7 @@ export default function HomePage() {
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
-				<section className={`${styles.section_2}`}>
+				{/* <section className={`${styles.section_2}`}>
 					<div className={`${styles.hand}`}>
 						<img src={Hand.src} className="img-responsive" alt="wave" />
 					</div>
@@ -104,8 +104,8 @@ export default function HomePage() {
 							</h3>
 						</div>
 					</div>
-				</section>
-				<section className={`${styles.section_3}`} ref={formSectionRef}>
+				</section> */}
+				<section className={`${styles.section_3} pt_100`} ref={formSectionRef}>
 					<div className="container">
 						{/* <Form /> */}
 						<div className={`${styles.thank_you_data}`}>

@@ -60,6 +60,7 @@
                     background-repeat: no-repeat;
                     background-image: url("/img/home/banner_screen_1.jpg");
                     @media (max-width: 767px) {
+                        background-position: calc(100% + 30px) right;
                         background-image: url("/img/home/mobile_banner_screen_1.jpg");
                     }
                 }
@@ -71,6 +72,7 @@
                     background-repeat: no-repeat;
                     background-image: url("/img/home/banner_screen_2.jpg");
                     @media (max-width: 767px) {
+                        background-position: calc(100% + 30px) right;
                         background-image: url("/img/home/mobile_banner_screen_2.jpg");
                     }
                 }
@@ -82,6 +84,7 @@
                     background-repeat: no-repeat;
                     background-image: url("/img/home/banner_screen_4.jpg");
                     @media (max-width: 767px) {
+                        background-position: calc(100% + 30px) right;
                         background-image: url("/img/home/mobile_banner_screen_4.jpg");
                     }
                 }

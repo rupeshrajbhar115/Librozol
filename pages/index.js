@@ -287,7 +287,7 @@ export default function HomePage() {
 									>
 										<h3>
 											Replace the Faulty <br className="hidden_xs" />
-											pipe with Flowguard®
+											pipe with FlowGuard®
 											<br className="hidden_xs" />
 											Plus CPVC
 										</h3>
@@ -346,7 +346,7 @@ export default function HomePage() {
 											you did it!
 										</h3>
 										<h5>
-											Flowguard® Plus CPVC helps prevent leaks. Now take the pledge to save
+											FlowGuard® Plus CPVC helps prevent leaks. Now take the pledge to save
 											water in real life.{" "}
 										</h5>
 										<div className={`${styles.btn_section}`} onClick={handleScrollToForm}>

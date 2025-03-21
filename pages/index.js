@@ -77,6 +77,9 @@ export default function HomePage() {
 			setVideoPlayed(true);
 		}
 		setShowFlowGuard(false);
+		setTimeout(() => {
+			setShowStep4(true);
+		}, 2000);
 	};
 	/** Scroll to Form Section */
 	const handleScrollToForm = () => {
@@ -192,7 +195,18 @@ export default function HomePage() {
 												<source src="../img/home/mobile_video_2.mp4" type="video/mp4" />
 												Your browser does not support the video tag.
 											</video>
+											{/* <audio autoPlay loop>
+												<source src="../img/home/flow_audio.mp3" type="audio/mp3" />
+												Your browser does not support the audio element.
+											</audio> */}
 										</div>
+									)}
+
+									{!showFlowGuard && (
+										<audio autoPlay loop>
+											<source src="../img/home/flow_audio.mp3" type="audio/mp3" />
+											Your browser does not support the audio element.
+										</audio>
 									)}
 
 									<div
@@ -204,6 +218,7 @@ export default function HomePage() {
 										<video ref={videoRef} muted playsInline className="hidden_xs">
 											<source src="../img/home/desktop_video_3.mp4" type="video/mp4" />
 										</video>
+
 										<video autoPlay muted playsInline className="visible_xs">
 											<source src="../img/home/mobile_video_3.mp4" type="video/mp4" />
 											Your browser does not support the video tag.

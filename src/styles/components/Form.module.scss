@@ -6,6 +6,13 @@
     padding: 30px 50px 40px 50px;
     border-radius: 20px;
     background-color: #fff;
+    @media (max-width: 767px) {
+        width: 100%;
+        padding: 30px 20px 40px 20px;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        width: 100%;
+    }
     .title_section{
         text-align: center;
         h2{
@@ -21,15 +28,24 @@
     }
     .form{
         margin-top: 50px;
+        @media (max-width: 767px) {
+            margin-top: 30px;
+        }
         .formGroupSection{
             display: flex;
             grid-gap: 25px;
             margin-bottom: 20px;
             align-items: center;
             justify-content: space-between;
+            @media (max-width: 767px) {
+                flex-wrap: wrap;
+            }
             .formGroup{
                 width: 48%;
                 position: relative;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
                 .lable_text{
                     font-size: 15px;
                     font-weight: 400;

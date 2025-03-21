@@ -7,9 +7,16 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
     .left{
+      @media (max-width: 767px) {
+        width: 100%;
+      }
       p{
-        opacity: 0.8;
         font-size: 14px;
         line-height: 20px;
         font-weight: 400;
@@ -24,20 +31,29 @@
       }
     }
     .right{
+      @media (max-width: 767px) {
+        width: 100%;
+      }
       p{
-        opacity: 0.8;
         font-size: 14px;
         line-height: 20px;
         font-weight: 400;
         color: #CDCDCD;
         text-align: right;
         padding-bottom: 10px;
+        @media (max-width: 767px) {
+          text-align: center;
+          margin-top: 25px;
+        }
       }
       ul{
         display: flex;
         grid-gap: 10px;
         list-style: none;
         padding-left: 0;
+        @media (max-width: 767px) {
+          justify-content: center;
+        }
       }
     }
   }

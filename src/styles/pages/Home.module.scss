@@ -1,6 +1,9 @@
 @import "../helpers/helpers.scss";
 
 .HomePage {
+    @media (max-width: 767px) {
+		overflow: hidden;
+	}
     .section_1{
         height: 100vh;
         position: relative;
@@ -57,6 +60,9 @@
 	.section_2{
         position: relative;
         margin-bottom: 250px;
+        @media (max-width: 767px) {
+            margin-bottom: 100px;
+        }
         .wave{
             img{
                 width: 100%;
@@ -64,6 +70,9 @@
         }
         .water_title{
             margin-top: -80px;
+            @media (max-width: 992px) {
+                margin-top: 0;
+            }
             .water_drop{
                 img{
                     margin: auto;
@@ -75,6 +84,10 @@
                     font-size: 52px;
                     font-weight: 600;
                     line-height: 55px;
+                    @media (max-width: 767px) {
+                        font-size: 34px;
+                        line-height: 40px;
+                    }
                 }
             }
         }
@@ -82,6 +95,14 @@
             width: 650px;
             margin: auto;
             padding-top: 20vh;
+            @media (max-width: 767px) {
+                width: 100%;
+                padding-left: 10px;
+                padding-top: 100px;
+            }
+            @media (min-width: 768px) and (max-width: 992px) {
+               padding-top: 150px;
+            }
             h6{
                 color: #fff;
                 font-size: 14px;
@@ -92,11 +113,18 @@
                 border-radius: 20px;
                 background-color: #0A409D;
                 padding: 60px 200px 60px 40px;
+                @media (max-width: 767px) {
+                    padding: 50px 150px 50px 20px;
+                }
                 h3{
                     color: #fff;
                     font-size: 40px;
                     font-weight: 600;
                     line-height: 50px;
+                    @media (max-width: 767px) {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
                     span{
                         color: #5BD8FB;
                     }
@@ -108,28 +136,62 @@
             top: 90%;
             position: absolute; 
             transform: translateY(-50%);
+            @media (max-width: 767px) {
+                top: 83%;
+                width: 50%;
+            }
             img{
                 width: 780px;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+                @media (min-width: 768px) and (max-width: 992px) {
+                    width: 400px;
+                }
+                @media (min-width: 993px) and (max-width: 1200px) {
+                    width: 500px;
+                }
             }
         }
     }
     .section_4{
         padding: 100px 0;
+        @media (max-width: 767px) {
+           padding: 80px 0;
+        }
         .child_section{
             display: flex;
             grid-gap: 50px;
             align-items: center;
             justify-content: space-between;
+            @media (max-width: 767px) {
+                flex-wrap: wrap;
+            }
             .child_img{
                 width: 50%;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
             }
             .child_info{
                 width: 50%;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
                 h2{
                     color: #00127E;
                     font-size: 40px;
                     font-weight: 600;
                     line-height: 48px;
+                    @media (max-width: 767px) {
+                        font-size: 22px;
+                        line-height: 28px;
+                        text-align: center;
+                    }
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        font-size: 35px;
+                        line-height: 40px;
+                    }
                     span{
                         color: #fff;
                     }

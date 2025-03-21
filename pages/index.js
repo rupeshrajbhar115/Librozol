@@ -155,7 +155,7 @@ export default function HomePage() {
 								>
 									<div className={styles.step_1}>
 										<video autoPlay muted loop playsInline className="hidden_xs">
-											<source src="../img/home/desktop_video_21.mp4" type="video/mp4" />
+											<source src="../img/home/desktop_video_2.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
 										<video autoPlay muted loop playsInline className="visible_xs">
@@ -189,7 +189,7 @@ export default function HomePage() {
 									{showFlowGuard && (
 										<div className={`${styles.step_1}`}>
 											<video autoPlay muted loop playsInline className="hidden_xs">
-												<source src="../img/home/desktop_video_21.mp4" type="video/mp4" />
+												<source src="../img/home/desktop_video_2.mp4" type="video/mp4" />
 											</video>
 											<video autoPlay muted loop playsInline className="visible_xs">
 												<source src="../img/home/mobile_video_2.mp4" type="video/mp4" />

@@ -160,7 +160,7 @@ export default function Form() {
 							<option value="Builder">Builder</option>
 							<option value="Business Owner">Business Owner</option>
 							<option value="Private Job">Private Job</option>
-							<option value="Plimber">Plimber</option>
+							<option value="Plumber">Plumber</option>
 							<option value="Other">Other</option>
 						</select>
 						{errors.jobCategory && (

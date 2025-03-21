@@ -17,18 +17,24 @@ import styles from "@/styles/pages/Home.module.scss";
 
 // IMAGES //
 import Wave from "../public/img/home/wave.png";
+import Wave2 from "../public/img/home/wave2.png";
 import WaterDrop from "../public/img/home/water_drap.png";
 import Hand from "../public/img/home/hand.png";
 import Child from "../public/img/home/child_img.png";
 import IntroBanner from "../public/img/home/intro_banner.jpg";
 import Logo from "../public/img/home/header_logo.svg";
 import IntroLogo from "../public/img/home/intro_logo.gif";
+import FlowGuard from "../public/img/home/flow_guard.png";
+import HandPoint from "../public/img/home/curser.png";
 
 // DATA //
 
 /** Home Page */
 export default function HomePage() {
 	const [fadeOut, setFadeOut] = useState(false);
+	const [showStep2, setShowStep2] = useState(false);
+	const [showStep3, setShowStep3] = useState(false);
+	const [showStep4, setShowStep4] = useState(false);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -63,13 +69,123 @@ export default function HomePage() {
 							<img src={IntroLogo.src} className="img-responsive" alt="banner" />
 						</div>
 					</div>
-					<div className={`${styles.flow_animation}`}>
-						<div className={`${styles.step_1}`}>
-							<video autoPlay muted loop>
-								<source src="../img/home/Dvideo1.mp4" type="video/mp4" />
-								Your browser does not support the video tag.
-							</video>
-						</div>
+					<div className={styles.flow_animation_wrapper}>
+						{fadeOut && !showStep2 && !showStep3 && !showStep4 && (
+							<div className={styles.flow_animation}>
+								<div className={styles.step_wrapper_1}>
+									<div className={styles.step_1}>
+										<video autoPlay muted>
+											<source src="../img/home/desktop_video_1.mp4" type="video/mp4" />
+											Your browser does not support the video tag.
+										</video>
+									</div>
+									<div className={`${styles.video_text}`}>
+										<h3>
+											Leaky pipes
+											<br /> dampen your walls.
+										</h3>
+										<h5>Stop it to #SaveALitre</h5>
+										<div className={`${styles.btn_section}`}>
+											<div
+												className={`${styles.btn_secondary}`}
+												onClick={() => setShowStep2(true)}
+											>
+												Stop the Leakage
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						)}
+
+						{showStep2 && !showStep3 && !showStep4 && (
+							<div className={styles.flow_animation}>
+								<div
+									className={styles.step_wrapper_2}
+									onClick={() => setShowStep3(true)}
+								>
+									<div className={styles.step_1}>
+										<video autoPlay muted loop>
+											<source src="../img/home/desktop_video_2.mp4" type="video/mp4" />
+											Your browser does not support the video tag.
+										</video>
+										<img
+											src={HandPoint.src}
+											className={`${styles.hand_point} img-responsive`}
+											alt="banner"
+										/>
+									</div>
+
+									<div className={`${styles.video_text}`}>
+										<h3>
+											Tap on the <br /> rusted pipe
+										</h3>
+										<h5>to stop the water leak.</h5>
+									</div>
+								</div>
+							</div>
+						)}
+
+						{showStep3 && !showStep4 && (
+							<div className={styles.flow_animation}>
+								<div
+									className={styles.step_wrapper_2}
+									onClick={() => setShowStep4(true)}
+								>
+									<div className={styles.step_1}>
+										<video autoPlay muted>
+											<source src="../img/home/desktop_video_3.mp4" type="video/mp4" />
+										</video>
+									</div>
+									<div className={`${styles.flow_guard}`}>
+										<img
+											src={FlowGuard.src}
+											className={`${styles.floating_img} img-responsive`}
+											alt="banner"
+										/>
+										<img
+											src={HandPoint.src}
+											className={`${styles.hand_point} ${styles.floating_img} img-responsive`}
+											alt="banner"
+										/>
+									</div>
+									<div className={`${styles.video_text}`}>
+										<h3>
+											Replace the Faulty <br />
+											pipe with Floguard®
+											<br />
+											Plus CPV
+										</h3>
+										<h5>to stop the water leak.</h5>
+									</div>
+								</div>
+							</div>
+						)}
+
+						{showStep4 && (
+							<div className={styles.flow_animation}>
+								<div className={styles.step_wrapper_2}>
+									<div className={styles.step_1}>
+										<video autoPlay muted loop>
+											<source src="../img/home/desktop_video_4.mp4" type="video/mp4" />
+										</video>
+									</div>
+									<div className={`${styles.video_text}`}>
+										<h3>
+											Congratulations, <br />
+											you did it!
+										</h3>
+										<h5>
+											Floguard® Plus CPV helps prevent leaks. Now take the pledge to save
+											water in real life.{" "}
+										</h5>
+										<div className={`${styles.btn_section}`}>
+											<div className={`${styles.btn_secondary}`}>Take the Pledge</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						)}
 					</div>
 				</section>
 				<section className={`${styles.section_2}`}>
@@ -92,7 +208,7 @@ export default function HomePage() {
 						</div>
 					</div>
 					<div className={`${styles.lost_water}`}>
-						<h6>1 Source: SPML Water Loss Management</h6>
+						<h6>Source: SPML Water Loss Management</h6>
 						<div className={`${styles.hand_box}`}>
 							<h3>
 								With every pledge, <span>FlowGuard® Plus</span> will save 1500 litres of
@@ -107,6 +223,11 @@ export default function HomePage() {
 					</div>
 				</section>
 				<section className={`${styles.section_4}`}>
+					<img
+						src={Wave2.src}
+						className={`${styles.wave2} img-responsive`}
+						alt="wave"
+					/>
 					<div className="container">
 						<div className={`${styles.child_section}`}>
 							<div className={`${styles.child_img}`}>

@@ -1,9 +1,7 @@
 @import "../helpers/helpers.scss";
 
 .HomePage {
-    @media (max-width: 767px) {
-		overflow: hidden;
-	}
+    overflow: hidden;
     .section_1{
         height: 100vh;
         position: relative;
@@ -42,17 +40,162 @@
                 transform: translate(-50%, - 50%);
             }
         }
-        .flow_animation{
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            position: absolute;
-            .step_1{
-                video{
-                    width: 100vw;
-                    height: 100vh;
-                    object-fit: cover;
+        .flow_animation_wrapper{
+            .flow_animation{
+                top: 0;
+                left: 0;
+                z-index: 1;
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                .step_wrapper_1{
+                    .step_1{
+                        video{
+                            width: 100vw;
+                            height: 100vh;
+                            object-fit: cover;
+                        }
+                    }
+                    .video_text{
+                        top: 50%;
+                        left: 100px;
+                        position: absolute;
+                        transform: translateY(-50%);
+                        h3{
+                            color: #fff;
+                            font-size: 56px;
+                            font-weight: 600;
+                            line-height: 60px;
+                        }
+                        h5{
+                            color: #fff;
+                            font-size: 32px;
+                            font-weight: 500;
+                            line-height: 38px;
+                            padding-top: 20px;
+                        }
+                        .btn_section{
+                            margin-top: 20px;
+                            .btn_secondary{
+                                border: 0;
+                                cursor: pointer;
+                                font-size: 24px;
+                                font-weight: 400;
+                                color: #fff;
+                                font-weight: 500;
+                                border-radius: 100px;
+                                padding: 12px 30px;
+                                box-shadow: none;
+                                display: inline-block;
+                                background: #00127E;
+                            }
+                        }
+                    }
+                }
+                .step_wrapper_2{
+                    cursor: pointer;
+                    .step_1{
+                        video{
+                            width: 100vw;
+                            height: 100vh;
+                            object-fit: cover;
+                        }
+                        .hand_point{
+                            top: 12%;
+                            z-index: 1;
+                            right: 13%;
+                            position: absolute;
+                            transform: translate(-50%, -50%);  
+                            animation: floatAnimation 4s ease-in-out infinite;                      
+                        }
+                        @keyframes floatAnimation {
+                            0% {
+                              transform: translateY(0);
+                            }
+                            50% {
+                              transform: translateY(10px);
+                            }
+                            100% {
+                              transform: translateY(0);
+                            }
+                          }
+                    }
+                    .flow_guard{
+                        top: 30%;
+                        left: 60%;
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+
+                        @keyframes floatAnimation {
+                            0% {
+                              transform: translateY(0);
+                            }
+                            50% {
+                              transform: translateY(50px);
+                            }
+                            100% {
+                              transform: translateY(0);
+                            }
+                          }
+                          @keyframes floatAnimationHand {
+                            100% {
+                              transform: translateY(-50%) rotate(-20deg);
+                            }
+                            50% {
+                              transform: translateY(calc(-50% + 50px)) rotate(-20deg);
+                            }
+                            0% {
+                              transform: translateY(-50%) rotate(-20deg);
+                            }
+                          }
+                          
+                          .floating_img {
+                            width: 65px;
+                            animation: floatAnimation 4s ease-in-out infinite;
+                          }
+                          .hand_point {
+                            top: 60%;
+                            right: -20px;
+                            position: absolute;
+                            animation: floatAnimationHand 4s ease-in-out infinite;
+                          }
+                    }
+                    .video_text{
+                        top: 50%;
+                        left: 100px;
+                        width: 40%;
+                        position: absolute;
+                        transform: translateY(-50%);
+                        h3{
+                            color: #fff;
+                            font-size: 56px;
+                            font-weight: 600;
+                            line-height: 60px;
+                        }
+                        h5{
+                            color: #fff;
+                            font-size: 32px;
+                            font-weight: 500;
+                            line-height: 38px;
+                            padding-top: 20px;
+                        }
+                        .btn_section{
+                            margin-top: 20px;
+                            .btn_secondary{
+                                border: 0;
+                                cursor: pointer;
+                                font-size: 24px;
+                                font-weight: 400;
+                                color: #fff;
+                                font-weight: 500;
+                                border-radius: 100px;
+                                padding: 12px 30px;
+                                box-shadow: none;
+                                display: inline-block;
+                                background: #00127E;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -74,16 +217,30 @@
                 margin-top: 0;
             }
             .water_drop{
-                img{
+                
+                @keyframes floatAnimationWater {
+                    0% {
+                      transform: translateY(0);
+                    }
+                    50% {
+                      transform: translateY(30px);
+                    }
+                    100% {
+                      transform: translateY(0);
+                    }
+                  }
+                  img{
                     margin: auto;
+                    animation: floatAnimationWater 4s ease-in-out infinite;
                 }
             }
             .title{
-                padding-top: 25px;
+                padding-top: 60px;
                 h2{
                     font-size: 52px;
-                    font-weight: 600;
+                    font-weight: 900;
                     line-height: 55px;
+                    color: #00127E;
                     @media (max-width: 767px) {
                         font-size: 34px;
                         line-height: 40px;
@@ -119,7 +276,7 @@
                 h3{
                     color: #fff;
                     font-size: 40px;
-                    font-weight: 600;
+                    font-weight: 900;
                     line-height: 50px;
                     @media (max-width: 767px) {
                         font-size: 24px;
@@ -156,8 +313,15 @@
     }
     .section_4{
         padding: 100px 0;
+        position: relative;
         @media (max-width: 767px) {
            padding: 80px 0;
+        }
+        .wave2{
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            position: absolute;
         }
         .child_section{
             display: flex;
@@ -181,7 +345,7 @@
                 h2{
                     color: #00127E;
                     font-size: 40px;
-                    font-weight: 600;
+                    font-weight: 900;
                     line-height: 48px;
                     @media (max-width: 767px) {
                         font-size: 22px;

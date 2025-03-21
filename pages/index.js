@@ -40,6 +40,28 @@ export default function HomePage() {
 	const [videoPlayed, setVideoPlayed] = useState(false);
 	const [showFlowGuard, setShowFlowGuard] = useState(true);
 
+	const [isPlaying, setIsPlaying] = useState(true); // Start playing by default
+	const audioRef = useRef(null);
+
+	// Play audio automatically when component mounts
+	useEffect(() => {
+		if (audioRef.current) {
+			audioRef.current.play();
+		}
+	}, []);
+
+	/** toggleAudio */
+	const toggleAudio = () => {
+		if (audioRef.current) {
+			if (isPlaying) {
+				audioRef.current.pause();
+			} else {
+				audioRef.current.play();
+			}
+			setIsPlaying(!isPlaying);
+		}
+	};
+
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setFadeOut(true);
@@ -133,10 +155,14 @@ export default function HomePage() {
 											<source src="../img/home/desktop_video_21.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
-										<video autoPlay muted playsInline className="visible_xs">
+										<video autoPlay muted loop playsInline className="visible_xs">
 											<source src="../img/home/mobile_video_2.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
+										<audio autoPlay>
+											<source src="../img/home/audio.mp3" type="audio/mp3" />
+											Your browser does not support the audio element.
+										</audio>
 										<img
 											src={HandPoint.src}
 											className={`${styles.hand_point} img-responsive`}
@@ -162,7 +188,7 @@ export default function HomePage() {
 											<video autoPlay muted loop playsInline className="hidden_xs">
 												<source src="../img/home/desktop_video_21.mp4" type="video/mp4" />
 											</video>
-											<video autoPlay muted playsInline className="visible_xs">
+											<video autoPlay muted loop playsInline className="visible_xs">
 												<source src="../img/home/mobile_video_2.mp4" type="video/mp4" />
 												Your browser does not support the video tag.
 											</video>
@@ -209,9 +235,9 @@ export default function HomePage() {
 										onClick={() => setShowStep4(true)}
 									>
 										<h3>
-											Replace the Faulty <br />
+											Replace the Faulty <br className="hidden_xs" />
 											pipe with Flowguard®
-											<br />
+											<br className="hidden_xs" />
 											Plus CPVC
 										</h3>
 										<h5>to stop the water leak.</h5>
@@ -233,10 +259,21 @@ export default function HomePage() {
 										</video>
 									</div>
 									<div className={styles.audio}>
-										<audio autoPlay loop>
+										{/* <audio autoPlay loop>
+											<source src="../img/home/audio.mp3" type="audio/mp3" />
+											Your browser does not support the audio element.
+										</audio> */}
+
+										{/* Audio Player */}
+										<audio ref={audioRef} autoPlay loop>
 											<source src="../img/home/audio.mp3" type="audio/mp3" />
 											Your browser does not support the audio element.
 										</audio>
+
+										{/* Play/Pause Button */}
+										<div className={styles.audio_controls}>
+											<button onClick={toggleAudio}>{isPlaying ? "Pause" : "Play"}</button>
+										</div>
 									</div>
 
 									<div className={`${styles.video_text} ${styles.video_text4}`}>

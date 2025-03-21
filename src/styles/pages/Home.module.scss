@@ -53,7 +53,7 @@
                 position: absolute;
                 .video_text1{
                     @media (max-width: 767px) {
-                        top: 50% !important;
+                        top: 40% !important;
                     }
                 }
                 .video_text2{
@@ -63,12 +63,14 @@
                 }
                 .video_text3{
                     @media (max-width: 767px) {
-                        top: 50% !important;
+                        width: 60% !important;
+                        top: 40% !important;
                     }
                 }
                 .video_text4{
                     @media (max-width: 767px) {
-                        top: 50% !important;
+                        width: 60% !important;
+                        top: 40% !important;
                     }
                 }
                 .step_wrapper_1{
@@ -139,6 +141,35 @@
                
                 .step_wrapper_2{
                     cursor: pointer;
+                    .audio{
+                        z-index: 2;
+                        bottom: 50px;
+                        right: 50px;
+                        position: absolute;
+                        @media (max-width: 767px) {
+                            bottom: 15px;
+                            right: 15px;
+                        }
+                        .audio_controls{
+                            button{
+                                border: 0;
+                                cursor: pointer;
+                                font-size: 24px;
+                                font-weight: 400;
+                                color: #fff;
+                                font-weight: 500;
+                                border-radius: 100px;
+                                padding: 12px 30px;
+                                box-shadow: none;
+                                display: inline-block;
+                                background: #00127E;
+                                @media (max-width: 767px) {
+                                    font-size: 14px;
+                                    padding: 10px 20px;
+                                }
+                            }
+                        }
+                    }
                     .step_1{
                         video{
                             width: 100vw;
@@ -185,7 +216,7 @@
                             transform: translate(-50%, -50%);
                             @media (max-width: 767px) {
                                 top: 26%;
-                                left: 40%;
+                                left: 85%;
                             }
                             @media (min-width: 768px) and (max-width: 1200px) {
                                 left: 80%;

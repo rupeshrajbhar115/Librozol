@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 // MODULES //
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
@@ -215,7 +216,13 @@ export default function Form() {
 							</label>
 						)}
 						<label htmlFor="terms">
-							I accept <a href="#">terms of use</a>
+							I accept{" "}
+							<a
+								href="https://www.lubrizol.com/Legal/Lubrizol-Privacy-and-Cookie-Policy"
+								target="_blank"
+							>
+								terms of use
+							</a>
 						</label>
 					</div>
 				</div>

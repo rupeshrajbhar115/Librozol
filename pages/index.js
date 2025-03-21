@@ -149,11 +149,25 @@ export default function HomePage() {
 						{showStep3 && !showStep4 && (
 							<div className={styles.flow_animation}>
 								<div className={styles.step_wrapper_2}>
-									<div className={styles.step_1} onClick={() => setShowStep4(true)}>
+									{showFlowGuard && (
+										<div className={`${styles.step_1}`}>
+											<video autoPlay muted loop>
+												<source src="../img/home/desktop_video_2.mp4" type="video/mp4" />
+											</video>
+										</div>
+									)}
+
+									<div
+										className={`${styles.step_1} `}
+										onClick={() => {
+											setShowStep4(true);
+										}}
+									>
 										<video ref={videoRef} muted>
 											<source src="../img/home/desktop_video_3.mp4" type="video/mp4" />
 										</video>
 									</div>
+
 									{showFlowGuard && (
 										<div
 											className={`${styles.flow_guard_wrapper}`}
@@ -173,6 +187,7 @@ export default function HomePage() {
 											</div>
 										</div>
 									)}
+
 									<div
 										className={`${styles.video_text}`}
 										onClick={() => setShowStep4(true)}

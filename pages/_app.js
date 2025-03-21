@@ -1,5 +1,6 @@
 // MODULES //
 import { useEffect } from "react";
+import Script from "next/script";
 
 // COMPONENTS //
 
@@ -25,5 +26,17 @@ export default function MyApp({ Component, pageProps }) {
 		SmoothScrolling();
 	}, []);
 
-	return <Component {...pageProps} />;
+	return (
+		<>
+			<Component {...pageProps} />
+			<script
+				async
+				src="https://www.googletagmanager.com/gtag/js?id=G-RV7EV89CLH"
+			></script>
+			<Script id="google-analytics" strategy="afterInteractive">
+				{`
+	window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-RV7EV89CLH');`}
+			</Script>
+		</>
+	);
 }

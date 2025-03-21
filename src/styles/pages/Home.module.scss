@@ -6,6 +6,9 @@
         height: 100vh;
         position: relative;
         overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-image: url("/img/home/banner_bg.jpg");
         .intro_banner{
             z-index: 1;
             width: 100%;
@@ -274,7 +277,7 @@
             }
         }
         .water_title{
-            margin-top: -80px;
+            margin-top: -130px;
             @media (max-width: 992px) {
                 margin-top: 0;
             }
@@ -370,6 +373,28 @@
                 }
                 @media (min-width: 993px) and (max-width: 1200px) {
                     width: 500px;
+                }
+            }
+        }
+    }
+    .section_3{
+        .thank_you_data{
+            width: 70%;
+            margin: auto;
+            border-radius: 20px;
+            padding: 50px 40px;
+            background-color: #fff;
+            h3{
+                color: #00127E;
+                font-size: 32px;
+                font-weight: 900;
+                text-align: center;
+                line-height: 36px;
+            }
+            .thank_img{
+                padding-top: 20px;
+                img{
+                    margin: auto;
                 }
             }
         }

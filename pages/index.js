@@ -67,8 +67,8 @@ export default function HomePage() {
 		<div>
 			{/* Metatags */}
 			<MetaTags
-				Title={"Librozol-Campaign"}
-				Desc={"Librozol Campaign"}
+				Title={"Flowgurard SaveALitre"}
+				Desc={"SaveALitre Campaign By Lubrizol"}
 				OgImg={""}
 				Url={"/"}
 			/>
@@ -210,9 +210,9 @@ export default function HomePage() {
 									>
 										<h3>
 											Replace the Faulty <br />
-											pipe with Floguard®
+											pipe with Flowguard®
 											<br />
-											Plus CPV
+											Plus CPVC
 										</h3>
 										<h5>to stop the water leak.</h5>
 									</div>
@@ -238,7 +238,7 @@ export default function HomePage() {
 											you did it!
 										</h3>
 										<h5>
-											Floguard® Plus CPV helps prevent leaks. Now take the pledge to save
+											Flowguard® Plus CPVC helps prevent leaks. Now take the pledge to save
 											water in real life.{" "}
 										</h5>
 										<div className={`${styles.btn_section}`} onClick={handleScrollToForm}>

@@ -1,6 +1,6 @@
 // MODULES //
 import { useRef, useState } from "react";
-
+import { useRouter } from "next/router";
 // COMPONENTS //
 
 // SECTIONS //
@@ -21,6 +21,7 @@ import styles from "@/styles/components/Form.module.scss";
 export default function Form() {
 	const formRef = useRef();
 	const [isSubmited, setIsSubmited] = useState(false);
+	const router = useRouter();
 
 	/** Default to GB(UK) or any other default country */
 	const [countryCode, setCountryCode] = useState();
@@ -60,7 +61,7 @@ export default function Form() {
 				Headers
 			).then((data) => data.json());
 			// .then((data) => {
-			reset(), setIsSubmited(true);
+			reset(), router.push("/thank-you");
 			// })
 			// .catch((err) => console.log(err));
 			// const resData = await res.json();
@@ -78,7 +79,9 @@ export default function Form() {
 			<form onSubmit={handleSubmit(onSubmit)} className={`${styles.form}`}>
 				<div className={styles.formGroupSection}>
 					<div className={styles.formGroup}>
-						<label className={`${styles.lable_text}`}>Full name</label>
+						<label className={`${styles.lable_text}`}>
+							Full name<span>*</span>
+						</label>
 						<input
 							className={`${styles.input} text_xs`}
 							type="text"
@@ -92,10 +95,12 @@ export default function Form() {
 						)}
 					</div>
 					<div className={styles.formGroup}>
-						<label className={`${styles.lable_text}`}>Phone number</label>
+						<label className={`${styles.lable_text}`}>
+							Phone number<span>*</span>
+						</label>
 						<input
 							className={`${styles.input} text_xs`}
-							type="text"
+							type="number"
 							id="number"
 							name="number"
 							placeholder="Phone number"
@@ -105,16 +110,26 @@ export default function Form() {
 									value: /^[6-9]\d{9}$/,
 									message: "Enter a valid 10-digit phone number",
 								},
+								maxLength: {
+									value: 10,
+									message: "Phone number must be exactly 10 digits",
+								},
+								minLength: {
+									value: 10,
+									message: "Phone number must be exactly 10 digits",
+								},
 							})}
 						/>
-						{errors.number && errors.number.type == "required" && (
-							<label className="error">This field is required</label>
+						{errors.number && (
+							<label className="error">{errors.number.message}</label>
 						)}
 					</div>
 				</div>
 				<div className={styles.formGroupSection}>
 					<div className={styles.formGroup}>
-						<label className={`${styles.lable_text}`}>Email address</label>
+						<label className={`${styles.lable_text}`}>
+							Email address<span>*</span>
+						</label>
 						<input
 							className={`${styles.input} text_xs`}
 							type="email"
@@ -134,7 +149,9 @@ export default function Form() {
 						)}
 					</div>
 					<div className={styles.formGroup}>
-						<label className={`${styles.lable_text}`}>City</label>
+						<label className={`${styles.lable_text}`}>
+							City<span>*</span>
+						</label>
 						<input
 							className={`${styles.input} text_xs`}
 							type="text"
@@ -150,7 +167,9 @@ export default function Form() {
 				</div>
 				<div className={styles.formGroupSection}>
 					<div className={styles.formGroup}>
-						<label className={`${styles.lable_text}`}>Job Category</label>
+						<label className={`${styles.lable_text}`}>
+							Job Category<span>*</span>
+						</label>
 						<select
 							{...register("jobCategory", { required: true })}
 							className={`${styles.input} text_xs`}
@@ -169,7 +188,9 @@ export default function Form() {
 					</div>
 					{selectedJobCategory === "Other" && (
 						<div className={styles.formGroup}>
-							<label className={`${styles.lable_text}`}>Others</label>
+							<label className={`${styles.lable_text}`}>
+								Others<span>*</span>
+							</label>
 							<input
 								className={`${styles.input} text_xs`}
 								type="text"
@@ -205,13 +226,6 @@ export default function Form() {
 				<div className={`${styles.btn_section}`}>
 					<button className={`${styles.btn_secondary}`}>Pledge Now</button>
 				</div>
-
-				{isSubmited && (
-					<p className={`${styles.thank_you} para_sm mt_20 color_white pt_10`}>
-						Thank you for reaching out! We’ve received your message and will get back
-						to you soon.
-					</p>
-				)}
 			</form>
 		</div>
 	);

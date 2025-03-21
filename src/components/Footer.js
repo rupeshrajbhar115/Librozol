@@ -14,7 +14,7 @@ import styles from "@/styles/components/Footer.module.scss";
 
 // IMAGES //
 import Face from "../../public/img/home/face.png";
-import What from "../../public/img/home/what.png";
+import Link from "../../public/img/home/linkedin.png";
 import Insta from "../../public/img/home/insta.png";
 import You from "../../public/img/home/you.png";
 
@@ -38,12 +38,11 @@ export default function Footer() {
 							property of Lubrizol Advanced Materials, a Berkshire Hathaway Company.
 						</p>
 						<h6>
-							Terms of use |{" "}
 							<a
 								href="https://www.lubrizol.com/Legal/Lubrizol-Privacy-and-Cookie-Policy"
 								target="_blank"
 							>
-								Privacy and Cookies policy
+								Terms of use | Privacy and Cookies policy
 							</a>
 						</h6>
 					</div>
@@ -51,28 +50,28 @@ export default function Footer() {
 						<p>Follow us on:</p>
 						<ul>
 							<li>
-								<a
-									href="https://www.facebook.com/groups/223138792764472"
-									target="_blank"
-								>
+								<a href="https://www.facebook.com/flowguardplus" target="_blank">
 									<img src={Face.src} className="img-responsive" alt="facebook" />
 								</a>
 							</li>
 							<li>
 								<a
-									href="https://api.whatsapp.com/message/HHDCTROC2ONGK1"
+									href="https://www.linkedin.com/showcase/lubrizol-cpvc/"
 									target="_blank"
 								>
-									<img src={What.src} className="img-responsive" alt="facebook" />
+									<img src={Link.src} className="img-responsive" alt="Link" />
 								</a>
 							</li>
 							<li>
-								<a href="https://www.instagram.com/flowguard_plus/" target="_blank">
+								<a
+									href="https://www.instagram.com/flowguard_plus/?hl=en"
+									target="_blank"
+								>
 									<img src={Insta.src} className="img-responsive" alt="facebook" />
 								</a>
 							</li>
 							<li>
-								<a href="https://www.youtube.com/c/FlowGuardPlusIndia" target="_blank">
+								<a href="https://www.youtube.com/@FlowGuardPlusIndia" target="_blank">
 									<img src={You.src} className="img-responsive" alt="facebook" />
 								</a>
 							</li>

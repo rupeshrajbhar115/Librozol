@@ -137,3 +137,18 @@ section {
 ::-ms-input-placeholder {
 	color: #411a0f;
 }
+
+.hidden_xs {
+	display: block;
+
+	@media (max-width: 767px) {
+		display: none !important;
+	}
+}
+.visible_xs {
+	display: block;
+
+	@media (min-width: 767px) {
+		display: none !important;
+	}
+}

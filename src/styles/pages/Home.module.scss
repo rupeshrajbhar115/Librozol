@@ -54,6 +54,9 @@
                             width: 100vw;
                             height: 100vh;
                             object-fit: cover;
+                            @media (min-width: 768px) and (max-width: 1200px) {
+                                object-position: right;
+                            }
                         }
                     }
                     .video_text{
@@ -61,11 +64,25 @@
                         left: 100px;
                         position: absolute;
                         transform: translateY(-50%);
+                        @media (max-width: 767px) {
+                            top: 60%;
+                            left: 15px;
+                            width: 100%;
+                        }
+                        @media (min-width: 768px) and (max-width: 1200px) {
+                            top: 60%;
+                            width: 65%;
+                            left: 20px;
+                        }
                         h3{
                             color: #fff;
                             font-size: 56px;
                             font-weight: 600;
                             line-height: 60px;
+                            @media (max-width: 767px) {
+                                font-size: 35px;
+                                line-height: 40px;
+                            }
                         }
                         h5{
                             color: #fff;
@@ -73,6 +90,10 @@
                             font-weight: 500;
                             line-height: 38px;
                             padding-top: 20px;
+                            @media (max-width: 767px) {
+                                font-size: 20px;
+                                line-height: 28px;
+                            }
                         }
                         .btn_section{
                             margin-top: 20px;
@@ -99,6 +120,9 @@
                             width: 100vw;
                             height: 100vh;
                             object-fit: cover;
+                            @media (min-width: 768px) and (max-width: 1200px) {
+                                object-position: right;
+                            }
                         }
                         .hand_point{
                             top: 12%;
@@ -106,7 +130,11 @@
                             right: 13%;
                             position: absolute;
                             transform: translate(-50%, -50%);  
-                            animation: floatAnimation 4s ease-in-out infinite;                      
+                            animation: floatAnimation 4s ease-in-out infinite; 
+                            @media (min-width: 768px) and (max-width: 1200px) {
+                                top: 20%;
+                                right: 33%;
+                            }                     
                         }
                         @keyframes floatAnimation {
                             0% {
@@ -131,6 +159,13 @@
                             left: 60%;
                             position: absolute;
                             transform: translate(-50%, -50%);
+                            @media (max-width: 767px) {
+                                top: 26%;
+                                left: 40%;
+                            }
+                            @media (min-width: 768px) and (max-width: 1200px) {
+                                left: 80%;
+                            }
     
                             @keyframes floatAnimation {
                                 0% {
@@ -175,11 +210,25 @@
                         width: 40%;
                         position: absolute;
                         transform: translateY(-50%);
+                        @media (max-width: 767px) {
+                            top: 60%;
+                            left: 15px;
+                            width: 100%;
+                        }
+                        @media (min-width: 768px) and (max-width: 1200px) {
+                            top: 60%;
+                            width: 65%;
+                            left: 20px;
+                        }
                         h3{
                             color: #fff;
                             font-size: 56px;
                             font-weight: 600;
                             line-height: 60px;
+                            @media (max-width: 767px) {
+                                font-size: 35px;
+                                line-height: 40px;
+                            }
                         }
                         h5{
                             color: #fff;
@@ -187,6 +236,10 @@
                             font-weight: 500;
                             line-height: 38px;
                             padding-top: 20px;
+                            @media (max-width: 767px) {
+                                font-size: 20px;
+                                line-height: 28px;
+                            }
                         }
                         .btn_section{
                             margin-top: 20px;
@@ -253,6 +306,7 @@
                     @media (max-width: 767px) {
                         font-size: 34px;
                         line-height: 40px;
+                        padding: 0 10px;
                     }
                 }
             }

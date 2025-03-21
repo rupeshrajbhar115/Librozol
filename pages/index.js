@@ -94,8 +94,12 @@ export default function HomePage() {
 							<div className={styles.flow_animation}>
 								<div className={styles.step_wrapper_1}>
 									<div className={styles.step_1}>
-										<video autoPlay muted>
+										<video autoPlay muted className="hidden_xs">
 											<source src="../img/home/desktop_video_1.mp4" type="video/mp4" />
+											Your browser does not support the video tag.
+										</video>
+										<video autoPlay muted className="visible_xs">
+											<source src="../img/home/mobile_video_1.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
 									</div>
@@ -125,8 +129,12 @@ export default function HomePage() {
 									onClick={() => setShowStep3(true)}
 								>
 									<div className={styles.step_1}>
-										<video autoPlay muted loop>
-											<source src="../img/home/desktop_video_2.mp4" type="video/mp4" />
+										<video autoPlay muted loop className="hidden_xs">
+											<source src="../img/home/desktop_video_21.mp4" type="video/mp4" />
+											Your browser does not support the video tag.
+										</video>
+										<video autoPlay muted className="visible_xs">
+											<source src="../img/home/mobile_video_2.mp4" type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
 										<img
@@ -151,8 +159,12 @@ export default function HomePage() {
 								<div className={styles.step_wrapper_2}>
 									{showFlowGuard && (
 										<div className={`${styles.step_1}`}>
-											<video autoPlay muted loop>
-												<source src="../img/home/desktop_video_2.mp4" type="video/mp4" />
+											<video autoPlay muted loop className="hidden_xs">
+												<source src="../img/home/desktop_video_21.mp4" type="video/mp4" />
+											</video>
+											<video autoPlay muted className="visible_xs">
+												<source src="../img/home/mobile_video_2.mp4" type="video/mp4" />
+												Your browser does not support the video tag.
 											</video>
 										</div>
 									)}
@@ -163,8 +175,12 @@ export default function HomePage() {
 											setShowStep4(true);
 										}}
 									>
-										<video ref={videoRef} muted>
+										<video ref={videoRef} muted className="hidden_xs">
 											<source src="../img/home/desktop_video_3.mp4" type="video/mp4" />
+										</video>
+										<video autoPlay muted className="visible_xs">
+											<source src="../img/home/mobile_video_3.mp4" type="video/mp4" />
+											Your browser does not support the video tag.
 										</video>
 									</div>
 
@@ -208,8 +224,12 @@ export default function HomePage() {
 							<div className={styles.flow_animation}>
 								<div className={styles.step_wrapper_2}>
 									<div className={styles.step_1}>
-										<video autoPlay muted loop>
+										<video autoPlay muted loop className="hidden_xs">
 											<source src="../img/home/desktop_video_4.mp4" type="video/mp4" />
+										</video>
+										<video autoPlay muted className="visible_xs">
+											<source src="../img/home/mobile_video_4.mp4" type="video/mp4" />
+											Your browser does not support the video tag.
 										</video>
 									</div>
 									<div className={`${styles.video_text}`}>

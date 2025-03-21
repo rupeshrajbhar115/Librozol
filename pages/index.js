@@ -1,5 +1,5 @@
 // MODULES //
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 // COMPONENTS //
 import MetaTags from "@/components/MetaTags";
@@ -31,10 +31,13 @@ import HandPoint from "../public/img/home/curser.png";
 
 /** Home Page */
 export default function HomePage() {
+	const videoRef = useRef(null);
 	const [fadeOut, setFadeOut] = useState(false);
 	const [showStep2, setShowStep2] = useState(false);
 	const [showStep3, setShowStep3] = useState(false);
 	const [showStep4, setShowStep4] = useState(false);
+	const [videoPlayed, setVideoPlayed] = useState(false);
+	const [showFlowGuard, setShowFlowGuard] = useState(true);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -43,6 +46,16 @@ export default function HomePage() {
 
 		return () => clearTimeout(timer);
 	}, []);
+
+	/** handleVideoPlay */
+	const handleVideoPlay = () => {
+		if (videoRef.current) {
+			videoRef.current.play();
+			setVideoPlayed(true);
+		}
+		setShowFlowGuard(false);
+	};
+
 	return (
 		<div>
 			{/* Metatags */}
@@ -128,16 +141,55 @@ export default function HomePage() {
 
 						{showStep3 && !showStep4 && (
 							<div className={styles.flow_animation}>
-								<div
-									className={styles.step_wrapper_2}
-									onClick={() => setShowStep4(true)}
-								>
-									<div className={styles.step_1}>
-										<video autoPlay muted>
+								<div className={styles.step_wrapper_2}>
+									<div className={styles.step_1} onClick={() => setShowStep4(true)}>
+										<video ref={videoRef} muted>
 											<source src="../img/home/desktop_video_3.mp4" type="video/mp4" />
 										</video>
 									</div>
-									<div className={`${styles.flow_guard}`}>
+									{showFlowGuard && (
+										<div
+											className={`${styles.flow_guard_wrapper}`}
+											onClick={handleVideoPlay}
+										>
+											<div className={`${styles.flow_guard}`}>
+												<img
+													src={FlowGuard.src}
+													className={`${styles.floating_img} img-responsive`}
+													alt="banner"
+												/>
+												<img
+													src={HandPoint.src}
+													className={`${styles.hand_point} ${styles.floating_img} img-responsive`}
+													alt="banner"
+												/>
+											</div>
+										</div>
+									)}
+									<div
+										className={`${styles.video_text}`}
+										onClick={() => setShowStep4(true)}
+									>
+										<h3>
+											Replace the Faulty <br />
+											pipe with Floguard®
+											<br />
+											Plus CPV
+										</h3>
+										<h5>to stop the water leak.</h5>
+									</div>
+								</div>
+
+								{/* <div className={styles.step_wrapper_2}>
+								
+									<div className={styles.step_1}>
+										<video ref={videoRef} muted>
+											<source src="../img/home/desktop_video_3.mp4" type="video/mp4" />
+										</video>
+									</div>
+
+								
+									<div className={`${styles.flow_guard}`} onClick={handleVideoPlay}>
 										<img
 											src={FlowGuard.src}
 											className={`${styles.floating_img} img-responsive`}
@@ -149,16 +201,17 @@ export default function HomePage() {
 											alt="banner"
 										/>
 									</div>
+
+								
 									<div className={`${styles.video_text}`}>
 										<h3>
 											Replace the Faulty <br />
-											pipe with Floguard®
-											<br />
+											pipe with Floguard® <br />
 											Plus CPV
 										</h3>
 										<h5>to stop the water leak.</h5>
 									</div>
-								</div>
+								</div> */}
 							</div>
 						)}
 

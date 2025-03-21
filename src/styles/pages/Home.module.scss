@@ -120,46 +120,55 @@
                             }
                           }
                     }
-                    .flow_guard{
-                        top: 30%;
-                        left: 60%;
+                    .flow_guard_wrapper{
+                        width: 100vw;
+                        height: 100vh;
+                        z-index: 11;
+                        top: 0;
                         position: absolute;
-                        transform: translate(-50%, -50%);
-
-                        @keyframes floatAnimation {
-                            0% {
-                              transform: translateY(0);
-                            }
-                            50% {
-                              transform: translateY(50px);
-                            }
-                            100% {
-                              transform: translateY(0);
-                            }
-                          }
-                          @keyframes floatAnimationHand {
-                            100% {
-                              transform: translateY(-50%) rotate(-20deg);
-                            }
-                            50% {
-                              transform: translateY(calc(-50% + 50px)) rotate(-20deg);
-                            }
-                            0% {
-                              transform: translateY(-50%) rotate(-20deg);
-                            }
-                          }
-                          
-                          .floating_img {
-                            width: 65px;
-                            animation: floatAnimation 4s ease-in-out infinite;
-                          }
-                          .hand_point {
-                            top: 60%;
-                            right: -20px;
+                        .flow_guard{
+                            top: 30%;
+                            left: 60%;
                             position: absolute;
-                            animation: floatAnimationHand 4s ease-in-out infinite;
-                          }
+                            transform: translate(-50%, -50%);
+    
+                            @keyframes floatAnimation {
+                                0% {
+                                  transform: translateY(0);
+                                }
+                                50% {
+                                  transform: translateY(50px);
+                                }
+                                100% {
+                                  transform: translateY(0);
+                                }
+                              }
+                              @keyframes floatAnimationHand {
+                                100% {
+                                  transform: translateY(-50%) rotate(-20deg);
+                                }
+                                50% {
+                                  transform: translateY(calc(-50% + 50px)) rotate(-20deg);
+                                }
+                                0% {
+                                  transform: translateY(-50%) rotate(-20deg);
+                                }
+                              }
+                              
+                              .floating_img {
+                                width: 65px;
+                                animation: floatAnimation 4s ease-in-out infinite;
+                              }
+                              .hand_point {
+                                top: 60%;
+                                z-index: 11;
+                                right: -20px;
+                                position: absolute;
+                                animation: floatAnimationHand 4s ease-in-out infinite;
+                              }
+                        }
                     }
+                    
                     .video_text{
                         top: 50%;
                         left: 100px;

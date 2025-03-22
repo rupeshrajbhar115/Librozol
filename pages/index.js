@@ -132,9 +132,6 @@ export default function HomePage() {
 			currency: "INR",
 			event_callback: callback,
 		});
-		if (window.fbq) {
-			window.fbq("track", "SubmitApplication");
-		}
 		return false;
 	}
 

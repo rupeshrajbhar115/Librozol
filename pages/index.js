@@ -133,7 +133,7 @@ export default function HomePage() {
 			event_callback: callback,
 		});
 		if (window.fbq) {
-			window.fbq("track", "Lead");
+			window.fbq("track", "SubmitApplication");
 		}
 		return false;
 	}

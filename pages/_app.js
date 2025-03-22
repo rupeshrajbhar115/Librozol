@@ -52,45 +52,6 @@ export default function MyApp({ Component, pageProps }) {
 				`}
 			</Script>
 
-			{/* Google Ads Conversion Tracking */}
-			<Script id="google-ads-conversion" strategy="afterInteractive">
-				{`
-					gtag('event', 'conversion', {
-						'send_to': 'AW-16911185916/BckECJfaz60aEPzv8P8-'
-					});
-				`}
-			</Script>
-
-			{/* Google Ads Conversion Tracking with URL Redirect */}
-			{/* <Script id="google-ads-conversion-url" strategy="afterInteractive">
-				{`
-					function gtag_report_conversion(url) {
-						var callback = function () {
-							if (typeof(url) !== 'undefined') {
-								window.location = url;
-							}
-						};
-						gtag('event', 'conversion', {
-							'send_to': 'AW-16911185916/wfgFCLKJ5a0aEPzv8P8-',
-							'value': 1.0,
-							'currency': 'INR',
-							'event_callback': callback
-						});
-						return false;
-					}
-				`}
-			</Script> */}
-			{/* Event snippet for Save a litre- Pledge Now conversion page */}
-			<Script id="save-a-litre-conversion" strategy="afterInteractive">
-				{`
-					gtag('event', 'conversion', {
-						'send_to': 'AW-16911185916/luk7CKij5a0aEPzv8P8-',
-						'value': 1.0,
-						'currency': 'INR'
-					});
-				`}
-			</Script>
-
 			{/* Meta Pixel Code */}
 			<Script id="meta-pixel" strategy="afterInteractive">
 				{`

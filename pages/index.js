@@ -116,6 +116,7 @@ export default function HomePage() {
 
 		fbq("init", "1628407397791855");
 		fbq("track", "PageView");
+		fbq("track", "SubmitApplication"); // ✅ New Event Added
 	}, []);
 
 	/** gtag_report_conversion */

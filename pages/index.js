@@ -380,8 +380,12 @@ export default function HomePage() {
 					<div className={`${styles.lost_water}`}>
 						<h6>Source: SPML Water Loss Management</h6>
 						<div className={`${styles.hand_box}`}>
-							<h3>
+							{/* <h3>
 								With every pledge, <span>FlowGuard® Plus</span> will save 1500 litres of
+								water.
+							</h3> */}
+							<h3>
+								With every pledge, <span>FlowGuard® Plus</span> can save liters of
 								water.
 							</h3>
 						</div>

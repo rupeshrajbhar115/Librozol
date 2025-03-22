@@ -38,6 +38,20 @@ export default function MyApp({ Component, pageProps }) {
 	window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-RV7EV89CLH');`}
 			</Script>
 
+			{/* Google Tag (gtag.js) */}
+			<script
+				async
+				src="https://www.googletagmanager.com/gtag/js?id=AW-16911185916"
+			></script>
+			<Script id="google-tag" strategy="afterInteractive">
+				{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', 'AW-16911185916');
+				`}
+			</Script>
+
 			{/* Google Ads Conversion Tracking */}
 			<Script id="google-ads-conversion" strategy="afterInteractive">
 				{`

@@ -116,7 +116,6 @@ export default function HomePage() {
 
 		fbq("init", "1628407397791855");
 		fbq("track", "PageView");
-		fbq("track", "SubmitApplication"); // ✅ New Event Added
 	}, []);
 
 	/** gtag_report_conversion */
@@ -199,6 +198,8 @@ export default function HomePage() {
 												onClick={() => {
 													setShowStep2(true);
 													gtag_report_conversion();
+													// ✅ Fire Facebook Pixel Event on Click
+													fbq("track", "SubmitApplication");
 												}}
 											>
 												Stop the Leakage

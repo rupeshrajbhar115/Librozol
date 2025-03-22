@@ -1,5 +1,4 @@
 // MODULES //
-import Script from "next/script";
 import { useRef, useEffect, useState } from "react";
 
 // COMPONENTS //
@@ -64,16 +63,6 @@ export default function HomePage() {
 			formSectionRef.current.scrollIntoView({ behavior: "smooth" });
 		}
 	};
-
-	<Script id="save-a-litre-conversion" strategy="afterInteractive">
-		{`
-					gtag('event', 'conversion', {
-						'send_to': 'AW-16911185916/luk7CKij5a0aEPzv8P8-',
-						'value': 1.0,
-						'currency': 'INR'
-					});
-				`}
-	</Script>;
 
 	return (
 		<div>

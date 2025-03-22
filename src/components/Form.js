@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 // MODULES //
+import Script from "next/script";
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 // COMPONENTS //
@@ -62,6 +63,14 @@ export default function Form() {
 				Headers
 			).then((data) => data.json());
 			// .then((data) => {
+			// Fire Google Ads conversion event
+			if (window.gtag) {
+				window.gtag("event", "conversion", {
+					send_to: "AW-16911185916/luk7CKij5a0aEPzv8P8-",
+					value: 1.0,
+					currency: "INR",
+				});
+			}
 			reset(), router.push("/thank-you");
 			// })
 			// .catch((err) => console.log(err));
@@ -73,6 +82,17 @@ export default function Form() {
 	};
 	return (
 		<div className={styles.form_section}>
+			<Script id="google-ads-conversion" strategy="afterInteractive">
+				{`
+					function fireConversionEvent() {
+						gtag('event', 'conversion', {
+							'send_to': 'AW-16911185916/luk7CKij5a0aEPzv8P8-',
+							'value': 1.0,
+							'currency': 'INR'
+						});
+					}
+				`}
+			</Script>
 			<div className={`${styles.title_section}`}>
 				<h2>Take the Pledge</h2>
 				<p>Join those who have pledged to save water. #SaveALitre</p>

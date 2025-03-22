@@ -80,23 +80,14 @@ export default function MyApp({ Component, pageProps }) {
 					}
 				`}
 			</Script>
-			{/* Google Ads Conversion Tracking with URL Redirect - Second Function */}
-			<Script id="google-ads-conversion-url-2" strategy="afterInteractive">
+			{/* Event snippet for Save a litre- Pledge Now conversion page */}
+			<Script id="save-a-litre-conversion" strategy="afterInteractive">
 				{`
-					function gtag_report_conversion_v2(url) {
-						var callback = function () {
-							if (typeof(url) !== 'undefined') {
-								window.location = url;
-							}
-						};
-						gtag('event', 'conversion', {
-							'send_to': 'AW-16911185916/luk7CKij5a0aEPzv8P8-',
-							'value': 1.0,
-							'currency': 'INR',
-							'event_callback': callback
-						});
-						return false;
-					}
+					gtag('event', 'conversion', {
+						'send_to': 'AW-16911185916/luk7CKij5a0aEPzv8P8-',
+						'value': 1.0,
+						'currency': 'INR'
+					});
 				`}
 			</Script>
 

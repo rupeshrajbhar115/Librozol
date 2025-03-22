@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/naming-convention */
 // MODULES //
 import { useRef, useEffect, useState } from "react";
 
@@ -88,6 +90,22 @@ export default function HomePage() {
 		}
 	};
 
+	/** gtag_report_conversion */
+	function gtag_report_conversion(url) {
+		var callback = function () {
+			if (typeof url != "undefined") {
+				window.location = url;
+			}
+		};
+		gtag("event", "conversion", {
+			send_to: "AW-16911185916/wfgFCLKJ5a0aEPzv8P8-",
+			value: 1.0,
+			currency: "INR",
+			event_callback: callback,
+		});
+		return false;
+	}
+
 	return (
 		<div>
 			{/* Metatags */}
@@ -149,7 +167,10 @@ export default function HomePage() {
 										<div className={`${styles.btn_section}`}>
 											<div
 												className={`${styles.btn_secondary}`}
-												onClick={() => setShowStep2(true)}
+												onClick={() => {
+													setShowStep2(true);
+													gtag_report_conversion();
+												}}
 											>
 												Stop the Leakage
 											</div>

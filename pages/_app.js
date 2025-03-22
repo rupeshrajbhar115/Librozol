@@ -62,7 +62,7 @@ export default function MyApp({ Component, pageProps }) {
 			</Script>
 
 			{/* Google Ads Conversion Tracking with URL Redirect */}
-			<Script id="google-ads-conversion-url" strategy="afterInteractive">
+			{/* <Script id="google-ads-conversion-url" strategy="afterInteractive">
 				{`
 					function gtag_report_conversion(url) {
 						var callback = function () {
@@ -79,7 +79,7 @@ export default function MyApp({ Component, pageProps }) {
 						return false;
 					}
 				`}
-			</Script>
+			</Script> */}
 			{/* Event snippet for Save a litre- Pledge Now conversion page */}
 			<Script id="save-a-litre-conversion" strategy="afterInteractive">
 				{`

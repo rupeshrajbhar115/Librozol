@@ -117,8 +117,6 @@ export default function HomePage() {
 						src="https://www.facebook.com/tr?id=1628407397791855&ev=Lead&noscript=1"
 					/>
 				</noscript>
-
-				<h1>Thank You for Your Pledge!</h1>
 			</>
 			{/* Metatags */}
 			<MetaTags

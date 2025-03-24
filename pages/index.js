@@ -45,7 +45,7 @@ export default function HomePage() {
 	const [isPlaying, setIsPlaying] = useState(true); // Start playing by default
 	const audioRef = useRef(null);
 
-	// Play audio automatically when component mounts
+	// Play audio automatically when component mount
 	useEffect(() => {
 		if (audioRef.current) {
 			audioRef.current.play();

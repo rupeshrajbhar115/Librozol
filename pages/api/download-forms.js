@@ -6,7 +6,7 @@ export default async (_req, res) => {
 	try {
 		// GraphCMS API se data fetch karna
 		const dataRes = await fetch(
-			`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/librozol-forms?pagination[page]=1&pagination[pageSize]=100000`,
+			`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/librozol-forms?pagination[page]=1&pagination[pageSize]=10000`,
 			{
 				headers: {
 					"Content-Type": "application/json",
@@ -25,21 +25,23 @@ export default async (_req, res) => {
 			return res.status(500).send("API se data sahi format mein nahi aa raha");
 		}
 
-		// Extract aur format karna data ko
-		const jsonData = await data.data.reverse().map((item, index) => {
-			console.log("Item Data:", item); // Har item ko log karenge
-			return {
-				id: item.id, // Directly use the fields
-				name: item.name, // Name field
-				number: item.number, // Number field
-				email: item.email, // Email field
-				city: item.city, // City field
-				jobCategory: item.jobCategory, // Job Category field
-				others: item.others, // Others field
-				terms: item.terms, // Terms acceptance status
-				createdAt: item.createdAt,
-			};
-		});
+		// Data ko ascending order mein sort karna (by 'createdAt' field)
+		const jsonData = await data.data
+			.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)) // Sorting ascending based on 'createdAt'
+			.map((item, index) => {
+				console.log("Item Data:", item); // Har item ko log karenge
+				return {
+					id: item.id, // Directly use the fields
+					name: item.name, // Name field
+					number: item.number, // Number field
+					email: item.email, // Email field
+					city: item.city, // City field
+					jobCategory: item.jobCategory, // Job Category field
+					others: item.others, // Others field
+					terms: item.terms, // Terms acceptance status
+					createdAt: item.createdAt, // Created date
+				};
+			});
 
 		console.log("Formatted Data:", JSON.stringify(jsonData, null, 2)); // Formatted data ko log karenge
 
